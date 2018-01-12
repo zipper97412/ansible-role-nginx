@@ -11,6 +11,6 @@ nginx_http_default_params:
   - tcp_nopush on
   - tcp_nodelay on
   - server_tokens off  
-  - access_log "{{nginx_log_dir}}/access.log"
-  - error_log "{{nginx_log_dir}}/error.log" {{nginx_error_log_level}}
+  - access_log syslog:server=unix:/dev/log,tag=nginx
+  - error_log syslog:server=unix:/dev/log,tag=nginx
   
